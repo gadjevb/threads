@@ -1,29 +1,33 @@
 package com.clouway.task1;
 
-public class Counter extends Thread {
+/**
+ * @author Borislav Gadjev <gadjevb@gmail.com>
+ */
 
-    private int countTo = 0;
-    private int countingNumber = 0;
+public class Counter extends Thread {
+    private final Integer to;
+    private int from = 0;
     private boolean flag = true;
 
-    public Counter(int countTo){
-        this.countTo = countTo;
+    public Counter(Integer to) {
+        this.to = to;
     }
 
-    public void run(){
-        while(countingNumber < countTo && flag){
+    public void run() {
+        while (from < to && flag) {
 
             try {
                 sleep(1000L);
             } catch (InterruptedException e) {
-                System.out.println("Counted to:" + countingNumber);
+                System.out.println("Counted to:" + from);
                 return;
             }
 
-            countingNumber++;
+            from++;
+            System.out.println("current :" + from);
 
         }
 
-        System.out.println("Counted to:" + countingNumber);
+        System.out.println("Counted to:" + from);
     }
 }

@@ -6,63 +6,16 @@ package com.clouway.task3;
 
 public class CounterThreadDemo {
 
-    public static Counter counter = new Counter();
-    public static int threadOneFrom = 0;
-    public static int threadOneTo = 5;
-    public static int threadTwoFrom = 0;
-    public static int threadTwoTo = 15;
-
-
-    public static Thread threadOne = new Thread(){
-
-        @Override
-        public void run() {
-            while(threadOneFrom <= threadOneTo){
-
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
-                    System.out.println("Thread1 was interrupted!");
-                    return;
-                }
-
-                System.out.println("Thread1- " + threadOneFrom);
-
-                threadOneFrom = counter.increment(threadOneFrom);
-            }
-
-            threadTwo.interrupt();
-        }
-    };
-
-    public static Thread threadTwo = new Thread(){
-
-        @Override
-        public void run() {
-            while(threadTwoFrom <= threadTwoTo){
-
-                try {
-                    sleep(1000);
-                } catch (InterruptedException e) {
-                    System.out.println("Thread2 was interrupted!");
-                    return;
-                }
-
-                System.out.println("Thread2- " + threadTwoFrom);
-
-                threadTwoFrom = counter.increment(threadTwoFrom);
-            }
-
-            threadOne.interrupt();
-        }
-    };
-
-
     public static void main(String [] args){
+        Counter count = new Counter();
+        CounterThread one = new CounterThread(0, 5, "Thread1", 500, count);
+        CounterThread two = new CounterThread(0, 10, "Thread2", 500, count);
 
-        threadOne.start();
-        threadTwo.start();
+        one.setThread(two);
+        two.setThread(one);
 
+        one.start();
+        two.start();
     }
 
 }

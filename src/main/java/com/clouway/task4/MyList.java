@@ -32,7 +32,7 @@ public class MyList {
 
     public synchronized void remove(int index){
 
-        while(myList.size() == size) {
+        while(myList.size() == 0) {
             try {
                 wait();
             } catch (InterruptedException e) {

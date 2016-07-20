@@ -3,7 +3,7 @@ package com.clouway.task4;
 import java.util.Random;
 
 /**
- * @author Borislav Gadjev <gadjevb@gmail.com>
+ *@author Borislav Gadjev <gadjevb@gmail.com>
  */
 
 public class RemovingThread extends Thread {

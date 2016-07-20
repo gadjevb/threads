@@ -3,7 +3,7 @@ package com.clouway.task1;
 import java.util.Scanner;
 
 /**
- * @author Borislav Gadjev <gadjevb@gmail.com>
+ *@author Borislav Gadjev <gadjevb@gmail.com>
  */
 
 public class CounterDemo {

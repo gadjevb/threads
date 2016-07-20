@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * @author Borislav Gadjev <gadjevb@gmail.com>
+ *@author Borislav Gadjev <gadjevb@gmail.com>
  */
 
 public class MyList {

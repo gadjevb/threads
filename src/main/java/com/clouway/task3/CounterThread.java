@@ -1,7 +1,7 @@
 package com.clouway.task3;
 
 /**
- * @author Borislav Gadjev <gadjevb@gmail.com>
+ *@author Borislav Gadjev <gadjevb@gmail.com>
  */
 
 public class CounterThread extends Thread {

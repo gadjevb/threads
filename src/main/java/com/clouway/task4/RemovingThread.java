@@ -8,6 +8,8 @@ import java.util.Random;
 
 public class RemovingThread extends Thread {
     private MyList list;
+    private int min = 1;
+    private int max = 1000;
 
     public RemovingThread(MyList list) {
         this.list = list;
@@ -16,14 +18,18 @@ public class RemovingThread extends Thread {
     @Override
     public void run() {
         Random number = new Random();
+
         while(true) {
+            int sleep = min + (int)(Math.random() * (max - min) + 1);
             try {
-                sleep(2000);
+                sleep(sleep);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            int consumerTakes = number.nextInt(list.getSize());
-            list.remove(consumerTakes);
+            if(list.getSize() != 0) {
+                int consumerTakes = number.nextInt(list.getSize());
+                list.remove(consumerTakes);
+            }
         }
     }
 }

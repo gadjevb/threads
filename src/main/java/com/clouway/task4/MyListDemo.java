@@ -7,7 +7,7 @@ package com.clouway.task4;
 public class MyListDemo {
 
     public static void main(String [] args) throws InterruptedException {
-        MyList list = new MyList();
+        MyList list = new MyList(5);
         boolean flag = true;
         String usedBy = "";
 

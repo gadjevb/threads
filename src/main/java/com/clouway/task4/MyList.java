@@ -2,7 +2,6 @@ package com.clouway.task4;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
@@ -10,11 +9,15 @@ import java.util.Scanner;
 
 public class MyList {
 
-    private Scanner sc = new Scanner(System.in);
     private List<Object> myList = new ArrayList();
+    private int size;
+
+    public MyList(int size) {
+        this.size = size;
+    }
 
     public synchronized void add(Object object){
-        while(myList.size() == 5) {
+        while(myList.size() == size) {
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -29,7 +32,7 @@ public class MyList {
     }
 
     public synchronized void remove(int index){
-        while(myList.size() == 0) {
+        while(myList.size() == size) {
             try {
                 wait();
             } catch (InterruptedException e) {

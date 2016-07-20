@@ -8,6 +8,8 @@ import java.util.Random;
 
 public class AddingThread extends Thread{
     private MyList list;
+    private int min = 1;
+    private int max = 1000;
 
     public AddingThread(MyList list) {
         this.list = list;
@@ -20,8 +22,9 @@ public class AddingThread extends Thread{
         while(true) {
             int producerInput = number.nextInt(101);
             list.add(producerInput);
+            int sleep = min + (int)(Math.random() * (max - min) + 1);
             try {
-                sleep(100);
+                sleep(sleep);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

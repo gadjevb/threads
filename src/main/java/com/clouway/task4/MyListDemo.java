@@ -5,10 +5,8 @@ package com.clouway.task4;
  */
 public class MyListDemo {
 
-    public static void main(String [] args) throws InterruptedException {
+    public static void main(String [] args) {
         MyList list = new MyList(5);
-        boolean flag = true;
-        String usedBy = "";
 
         Thread add = new AddingThread(list);
         RemovingThread remove = new RemovingThread(list);

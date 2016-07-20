@@ -19,6 +19,7 @@ public class RemovingThread extends Thread {
         Random number = new Random();
 
         while(true) {
+            System.out.println("-");
             int sleep = min + (int)(Math.random() * (max - min) + 1);
             try {
                 sleep(sleep);

@@ -31,6 +31,7 @@ public class MyList {
     }
 
     public synchronized void remove(int index){
+
         while(myList.size() == size) {
             try {
                 wait();

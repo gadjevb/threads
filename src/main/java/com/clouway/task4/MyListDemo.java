@@ -6,14 +6,15 @@ package com.clouway.task4;
 
 public class MyListDemo {
 
-    public static MyList list = new MyList();
+    public static void main(String [] args) throws InterruptedException {
+        MyList list = new MyList();
+        boolean flag = true;
+        String usedBy = "";
 
+        Thread add = new AddingThread(list);
+        RemovingThread remove = new RemovingThread(list);
 
-
-    public static void main(String [] args){
-
-
-
+        add.start();
+        remove.start();
     }
-
 }

@@ -11,34 +11,39 @@ import java.util.Scanner;
 public class MyList {
 
     private Scanner sc = new Scanner(System.in);
-    private List<Object> myList = new ArrayList<>(5);
+    private List<Object> myList = new ArrayList();
 
-    public synchronized void add(){
-
-        if(myList.size() == 5){
-            System.out.println("List is full, please remove an element first!");
-            int index = sc.nextInt();
-            sc.nextLine();
-            remove();
-
-        }else{
-            Object object = sc.nextInt();
-            myList.add(object);
-            System.out.println("Object " + object + " was added to the list!");
-            notifyAll();
+    public synchronized void add(Object object){
+        while(myList.size() == 5) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
+        System.out.println("Element:" + object + " was added!");
+
+        myList.add(object);
+        notifyAll();
     }
 
-    public synchronized void remove(){
-
-        if(myList.isEmpty()){
-            System.out.println("List is empty, please add an element first!");
-            add();
-        }else{
-            int index = sc.nextInt();
-            myList.remove(index);
-            System.out.println("Object at index " + index + " was removed from the list!");
-            notifyAll();
+    public synchronized void remove(int index){
+        while(myList.size() == 0) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
+        System.out.println("Element:" + myList.get(index) + " at position " + index +  " was removed!");
+
+        myList.remove(index);
+        notifyAll();
+    }
+
+    public int getSize(){
+        return myList.size();
     }
 }

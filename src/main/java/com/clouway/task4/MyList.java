@@ -6,7 +6,6 @@ import java.util.List;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class MyList {
 
     private List<Object> myList = new ArrayList();

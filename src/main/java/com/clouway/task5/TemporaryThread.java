@@ -3,7 +3,6 @@ package com.clouway.task5;
 /**
  * Created by borislav on 20.07.16.
  */
-
 public class TemporaryThread extends Thread {
     private int units;
     private int unitTimeInMilliseconds;

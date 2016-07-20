@@ -3,7 +3,6 @@ package com.clouway.task1;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class Counter extends Thread {
     private final Integer to;
     private int from = 0;

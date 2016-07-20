@@ -3,7 +3,6 @@ package com.clouway.task2;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class CounterThread extends Thread {
     private final int to;
     private final String name;

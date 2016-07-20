@@ -3,7 +3,6 @@ package com.clouway.task2;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class CounterThreadDemo {
 
     public static void main(String [] args){

@@ -5,7 +5,6 @@ import java.util.Scanner;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class CounterDemo {
 
     public static void main(String [] args){

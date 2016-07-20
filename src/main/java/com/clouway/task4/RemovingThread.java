@@ -5,7 +5,6 @@ import java.util.Random;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class RemovingThread extends Thread {
     private MyList list;
     private int min = 1;

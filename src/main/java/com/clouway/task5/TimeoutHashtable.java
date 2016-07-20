@@ -6,7 +6,6 @@ import java.util.Hashtable;
 /**
  *@author Borislav Gadjev <gadjevb@gmail.com>
  */
-
 public class TimeoutHashtable {
     private Hashtable<String, TemporaryThread> temporaryThreads = new Hashtable(10, 0.20f);
     private Object checker;
